@@ -1,0 +1,1064 @@
+:root {
+  --header-bg: #535353;
+  --header-text: #ffffff;
+  --verde: #000000;
+  --section-text: #333;
+  --footer-bg: #222;
+  --footer-text: #fff;
+  --cta-bg: #2fdb0c;
+}
+
+/* Reset e corpo */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif; }
+
+/* Header */
+header {
+  position: fixed;
+  top:0;
+  width:100%;
+  background: var(--header-bg);
+  color: var(--header-text);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  z-index:1000;
+}
+header h1{ font-size:1.5em; }
+nav a {
+  color: var(--header-text);
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:bold;
+  transition: opacity 0.3s;
+}
+nav a:hover{ opacity:0.8; }
+
+/* Hero/banner */
+.hero {
+  height: 80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#ffffff;
+  margin-top:70px;
+}
+.hero h2 {
+  font-size: 4.5em;
+  color: #ffffff; /* deixa o interior da letra transparente */
+  -webkit-text-stroke: 2px #ffffff; /* contorno branco */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.8em;
+  color: #ffffff;
+}
+
+/* Seções */
+section{
+  padding:60px 20px;
+  text-align:center;
+  color: var(--section-text);
+}
+section h2{
+  font-size:2em;
+  margin-bottom:25px;
+  color: var(--verde);
+}
+section p{
+  max-width:800px;
+  margin:0 auto 15px auto;
+  line-height:1.6;
+}
+
+/* Cards */
+.card-container{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  width:250px;
+  padding:15px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+.card img{
+  width:80px;
+  margin-bottom:15px;
+}
+.card h3{ color: var(--verde); margin-bottom:10px; }
+
+/* Footer */
+footer{
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding:30px 20px;
+  text-align:center;
+  font-size:0.9em;
+}
+footer a{
+  color:#9be2b1;
+  text-decoration:none;
+}
+footer a:hover{ text-decoration:underline; }
+
+/* CTA */
+.cta{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background: var(--cta-bg);
+  color:#fff;
+  font-weight:bold;
+  border-radius:6px;
+  text-decoration:none;
+  transition: background 0.3s;
+}
+.cta:hover{ background:#256f46; }
+
+/* WhatsApp flutuante */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25d366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  transition:transform 0.3s;
+  z-index:1000;
+}
+.whatsapp:hover{ transform:scale(1.1);}
+.whatsapp img{ width:35px; height:35px; }
+
+/* Responsivo */
+@media(max-width:768px){
+  header{flex-direction:column;text-align:center;}
+  nav a{margin:10px 5px; display:inline-block;}
+  .hero h2{font-size:1.6em;}
+  .hero p{font-size:1em;}
+  .card{width:90%;}
+}
+
+/* Estilos específicos por página */
+.pagina-home .hero { background:url('imagens/banner-home.webp') center/cover no-repeat; }
+.pagina-sobre .hero { background:url('imagens/banner-sobre.webp') center/cover no-repeat; }
+.pagina-servicos .hero { background:url('imagens/banner-servicos.webp') center/cover no-repeat; }
+.pagina-contato .hero { background:url('imagens/banner-contato.webp') center/cover no-repeat; }
+
+.pagina-home section{ background:#f2f2f2; }
+.pagina-sobre section{ background:#e8f0e8; }
+.pagina-servicos section{ background:#f9f9f9; }
+.pagina-contato section{ background:#fff5e6; }
+
+/* Logo e título */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre logo e texto */
+}
+
+.logo {
+  height: 50px; /* altura da logo */
+  width: auto; /* mantém proporção */
+}
+.hero-logo {
+  width: 320px; /* aumenta ou diminui o tamanho */
+  height: auto;
+  margin-bottom: 20px; /* espaço abaixo do logo */
+}
+.card img {
+  width: 100%;          /* faz a imagem ocupar toda a largura do card */
+  height: 150px;        /* altura fixa — você pode aumentar ou diminuir */
+  object-fit: cover;    /* mantém o enquadramento sem distorcer */
+  border-radius: 8px;   /* cantos arredondados (opcional) */
+  margin-bottom: 10px;  /* espaço entre imagem e o título */
+}
+.card {
+  background: #fff;
+  border: 1px solid rgba(145, 134, 134, 0.5); /* branco bem clarinho */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: 250px;
+  padding: 25px 15px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+nav a {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #000000;           /* cor da tecla */
+  color: #ffffff;                   /* cor do texto */
+  border: 2px solid #ccc;        /* contorno da tecla */
+  border-radius: 8px;
+  margin: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 0 #bbb;      /* efeito de tecla pressionada */
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background: #000000;
+  transform: translateY(2px);    /* animação como se pressionasse */
+  box-shadow: 0 2px 0 #aaa;
+}
+
+nav a:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #999;
+}
+.whatsapp {
+  border: none;
+  box-shadow: none;
+}
+
+footer a {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+/* --- Título principal do topo --- */
+header h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* SGT com destaque */
+.logo-sgt {
+  font-size: 1.0em;
+  color: #8f3333(--verde); /* usa o verde do tema */
+  font-weight: 900;
+  font-family: 'Times New Roman', sans-serif; /* fonte moderna */
+  letter-spacing: 2px;
+}
+
+/* Serviços com estilo mais leve */
+.logo-servicos {
+  color: #f2f2f2; /* cinza clarinho */
+  font-weight: 400;
+  font-family: 'Times', sans-serif; /* contraste bonito */
+  margin-left: 6px;
+  font-size: 0.6em;
+}
+/* Escolha com estilo mais leve */
+.logo-escolha {
+  font-size: 0.9em;
+  color: #ffffff; /* cinza clarinho */
+  font-weight: 100;
+  font-family: 'Times New Roman', sans-serif; /* contraste bonito */
+  margin-left: 6px;
+}
+body {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+header h1, .marca {
+  font-family: 'Times New Roman', sans-serif;
+  font-weight: 900;
+}
+.logo-sgt {
+  color: #ffffff(--verde);
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255); /* sombra */
+}
+.logo-servicos {
+  color: #ffffff(--verde);
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255); /* sombra */
+}
+.logo-escolha {
+  color: #ffffff(--verde);
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5); /* sombra */
+}
+.logo-servicos {
+  margin-left: -4px; /* diminui o espaço entre as palavras */
+}
+
+nav a {
+  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+header {
+  background: linear-gradient(135deg, #000000 0%, #292626 50%, #c7c7c7 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #000000;
+}
+
+nav a {
+  color: #ffffff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+.hero h2 {
+  color: #fff;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.6);
+}
+.hero {
+  position: relative;
+  background: url('banner.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+/* Escurece apenas o fundo da imagem do hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* controla o nível de escurecimento */
+  z-index: 1;
+}
+
+/* Garante que o texto e outros conteúdos fiquem acima do overlay */
+.hero h2,
+.hero p,
+.hero .cta,
+.hero img {
+  position: relative;
+  z-index: 2;
+}
+/* ===== Hero específico da página de Contato ===== */
+.hero-contato {
+  padding-top: 420px; /* desce o conteúdo */
+  justify-content: flex-start; /* empurra pra baixo em vez de centralizar */
+}
+
+.hero-contato h2 {
+  margin-top: 40px; /* ajuste fino, opcional */
+}
+.servico-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 40px 0;
+}
+
+.servico-img {
+  width: 100%;
+  max-width: 600px; /* ajuste conforme preferir */
+  height: 400px; /* define altura fixa */
+  object-fit: cover; /* corta proporcionalmente sem distorcer */
+  border-radius: 5px; /* mantém o visual suave */
+  display: block;
+  margin: 0 auto 20px; /* centraliza e dá espaçamento inferior */
+}
+
+
+.servico-info h3 {
+  color: var(--verde);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.servico-info p {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .servico-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servico-img {
+    width: 80%;
+  }
+}
+.servico-item {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.servico-item h3 {
+  font-size: 2rem;
+  color: #000000;
+  border-left: 5px solid #000000;
+  padding-left: 15px;
+}
+
+.servico-item p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-top: 10px;
+  text-align: justify; /* deixa mais elegante */
+  color: #000000;
+}
+/* Ajuste do layout dos tópicos de serviços */
+.servico-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap; /* permite reorganizar quando faltar espaço */
+}
+
+.servico-img {
+  width: 45%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.servico-info {
+  width: 50%;
+  text-align: justify;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Quando a tela for menor (ou zoom maior), deixa em coluna */
+@media (max-width: 1000px) {
+  .servico-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .servico-img, .servico-info {
+    width: 100%;
+  }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 5%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 350px;
+  flex: 1 1 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: auto;
+}
+
+.card-texto {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-texto h3 {
+  font-size: 1.6em;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.card-texto p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.card-texto ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.card-texto li {
+  margin-bottom: 5px;
+}
+
+
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: nowrap; /* força todos na mesma linha */
+}
+
+.card {
+  flex: 1 1 23%; /* cada card ocupa ~23% da largura, sobrando espaço para gap */
+}
+.card-texto h3 {
+  text-align: center; /* título centralizado */
+}
+
+.card-texto p,
+.card-texto ul {
+  text-align: left; /* texto e lista alinhados à esquerda */
+}
+.card-texto ul li {
+  font-weight: bold; /* deixa o texto do item em negrito */
+  margin-bottom: 5px; /* espaçamento entre os itens */
+  font-size: 1.1em; /* opcional: aumenta um pouco o tamanho para destaque */
+}
+
+
+.card-link {
+  text-decoration: none; /* remove sublinhado do link */
+  color: inherit;        /* mantém a cor original do card */
+}
+
+.card-link:hover .card {
+  transform: translateY(-5px); /* mantém o efeito hover do card */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+/* DEFAULT: 4 cards por linha */
+.card-link {
+  flex: 1 1 22%; /* cada card ocupa ~22% da largura, sobrando espaço para gap */
+}
+
+@media (max-width: 1200px) {
+  /* 2x2 em telas médias */
+  .card-link {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1 card por linha em celular */
+  .card-link {
+    flex: 1 1 90%;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 450px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-texto {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.card-texto h3 {
+  font-size: 1.6em;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+.card-texto ul li {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+.orcamento-corporativo {
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  padding: 70px 15%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.orcamento-corporativo h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.orcamento-corporativo p {
+  font-size: 1.1em;
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.btn-corporativo {
+  background-color: #15cc58; /* cor do WhatsApp */
+  color: #ffffff;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 25px;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 4px #0f9c43;
+  transform: translateY(0);
+}
+
+/* Ao passar o mouse */
+.btn-corporativo:hover {
+  background-color: #0f9c43;
+  transform: translateY(-2px);
+  box-shadow: 0 6px #0a7a33;
+}
+
+/* Ao clicar */
+.btn-corporativo:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #0a7a33;
+}
+
+
+.orcamento-servicos {
+  background: linear-gradient(135deg, #f8f8f8, #ededed);
+  padding: 150px 10%;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 1px;
+}
+
+.orcamento-servicos h2 {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.orcamento-servicos p {
+  font-size: 1.1em;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.btn-orcamento-servicos {
+  background-color: #15cc58;
+  color: #fff;
+  padding: 14px 34px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 25px;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 4px #1b924b;
+  transform: translateY(0);
+}
+
+/* Ao passar o mouse */
+.btn-orcamento-servicos:hover {
+  background-color: #187a3b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px #187a3b;
+}
+
+/* Ao clicar */
+.btn-orcamento-servicos:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #187a3b;
+}
+
+
+/* Remove espaço excessivo entre os tópicos e o orçamento */
+.servico-item:last-of-type {
+  margin-bottom: 10px; /* diminui o espaço do último tópico */
+}
+
+.orcamento-servicos {
+  margin-top: 0; /* cola o bloco ao anterior */
+  padding: 40px 10%;
+  background: linear-gradient(135deg, #f8f8f8, #ededed);
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+/* ===== SEÇÃO CONTATO ===== */
+#contato {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.contato-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contato-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contato-info h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+.contato-info p, .contato-info a {
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #15cc58;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px #1b924b; /* sombra que dá profundidade */
+  transition: all 0.15s ease-in-out; /* suaviza o movimento */
+  transform: translateY(0); /* posição inicial */
+}
+
+/* Efeito ao passar o mouse */
+.btn-whatsapp:hover {
+  background-color: #187a3b;
+  transform: translateY(-2px); /* botão sobe um pouco */
+  box-shadow: 0 6px #187a3b; /* sombra mais profunda */
+}
+
+/* Efeito ao clicar */
+.btn-whatsapp:active {
+  transform: translateY(2px); /* botão afunda */
+  box-shadow: 0 2px #187a3b; /* sombra reduzida */
+}
+
+
+.contato-mapa {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contato-mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contato-container {
+    flex-direction: column;
+  }
+
+  .contato-mapa {
+    margin-top: 30px;
+  }
+}
+
+#servicos li {
+  color: #000000;
+  font-weight: bold; /* opcional pra dar mais destaque */
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+.sobre-nos-container {
+  max-width: 900px; /* mantém o texto centralizado e legível */
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-size: 1.2em; /* aumenta o tamanho da letra */
+  line-height: 1.6; /* melhora a leitura */
+  color: #333; /* cor do texto */
+}
+
+.sobre-nos-container h2 {
+  font-size: 2em; /* aumenta o título */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000; /* cor do título */
+}
+
+
+@media (min-width: 1200px) {
+  .sobre-nos-container {
+    font-size: 1.4em;
+  }
+}
+
+
+.carrossel-equipamentos {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 70px 20px;
+  overflow: hidden;
+}
+
+.carrossel-equipamentos h2 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carrossel {
+  display: flex;
+  gap: 25px;
+  animation: deslizar-continuo 40s linear infinite;
+}
+
+.equip-item {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+.equip-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.equip-item p {
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.05em;
+}
+
+/* Animação contínua */
+@keyframes deslizar-continuo {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+.equipamentos-servicos {
+  background-color: #f8f8f8;
+  padding: 80px 0; /* removi o padding lateral pra não cortar o primeiro card */
+  text-align: center;
+  overflow: hidden;
+}
+
+.equipamentos-servicos h2 {
+  font-size: 2.3em;
+  margin-bottom: 15px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.equipamentos-servicos .intro-equipamentos {
+  max-width: 950px;
+  margin: 0 auto 50px;
+  color: #444;
+  font-size: 1.15em;
+  line-height: 1.7;
+  padding: 0 20px;
+}
+
+.equipamentos-linha {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 40px 20px; /* dá espaço interno sem cortar */
+  scroll-behavior: smooth;
+}
+
+.equipamentos-linha::-webkit-scrollbar {
+  height: 8px;
+}
+
+.equipamentos-linha::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.equip-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px;
+  width: 300px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.equip-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.equip-card h3 {
+  font-size: 1.3em;
+  color: #111;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.equip-card p {
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+
+.equip-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.equip-item-link:hover .equip-item {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+
+/* Remove o sublinhado e a cor dos links que envolvem os cards */
+.servico-item-link,
+.servico-item-link:visited,
+.servico-item-link:hover,
+.servico-item-link:active,
+.equipamentos-linha a,
+.equipamentos-linha a:visited,
+.equipamentos-linha a:hover,
+.equipamentos-linha a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.servico-item-link,
+.equipamentos-linha a {
+  display: block;
+}
+.servico-item {
+  transition: transform 0.2s ease;
+}
+/* Estilo dos cards com efeito hover mais suave */
+.equip-card {
+  transition: transform 0.2s ease; /* animação suave */
+  cursor: pointer; /* muda o cursor para indicar que é clicável */
+}
+
+.equip-card:hover {
+  transform: scale(1.02); /* aumenta só 3% ao passar o mouse */
+}
+
+/* === Padroniza as imagens dos equipamentos da página inicial (index) === */
+.carrossel-equipamentos .equip-item img {
+  width: 100% !important;
+  height: 200px !important; /* define altura fixa e proporcional */
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: 10px;
+  display: block;
+}
