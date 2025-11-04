@@ -211,7 +211,7 @@ nav a {
   display: inline-block;
   padding: 10px 25px;
   background: #000000;           /* cor da tecla */
-  color: #ffffff;                   /* cor do texto */
+  color: #ffffff;                /* cor do texto */
   border: 2px solid #ccc;        /* contorno da tecla */
   border-radius: 8px;
   margin: 5px;
@@ -231,6 +231,23 @@ nav a:active {
   transform: translateY(4px);
   box-shadow: 0 1px 0 #999;
 }
+
+/* --- Ajuste para celular: 2 por linha --- */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    display: block;
+    width: 45%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
+
 .whatsapp {
   border: none;
   box-shadow: none;
