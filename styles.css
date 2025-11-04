@@ -1067,11 +1067,12 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
   }
 
   nav a {
-    width: 45%;
+    flex: 0 0 48%;
+    box-sizing: border-box;
     text-align: center;
+    margin-bottom: 10px;
   }
 }
