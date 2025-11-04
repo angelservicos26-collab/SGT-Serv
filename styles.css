@@ -1062,3 +1062,16 @@ nav a:hover {
   border-radius: 10px;
   display: block;
 }
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    width: 45%;
+    text-align: center;
+  }
+}
