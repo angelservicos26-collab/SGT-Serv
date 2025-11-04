@@ -1079,17 +1079,3 @@ nav a:hover {
   border-radius: 10px;
   display: block;
 }
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    flex: 0 0 48%;
-    box-sizing: border-box;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-}
