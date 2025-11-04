@@ -1079,33 +1079,16 @@ nav a:hover {
   border-radius: 10px;
   display: block;
 }
-/* FORÇA: menu 2x2 em telas pequenas */
-@media (max-width: 768px) {
-  /* garante que o container use flex e possa quebrar linhas */
+@media only screen and (max-width: 768px) {
   nav {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 6px 6px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    justify-items: center !important;
   }
 
-  /* força cada botão a ocupar ~48% da largura (2 por linha) */
   nav a {
-    display: block !important;         /* sobrescreve inline-block */
-    box-sizing: border-box !important;  /* garantir medidas corretas */
-    flex: 0 0 48% !important;           /* base para 2 em 2 */
-    width: 48% !important;              /* backup caso flex seja ignorado */
-    max-width: 48% !important;
-    margin: 6px 1% !important;          /* espaçamento entre botões */
-    text-align: center !important;
-    white-space: normal !important;     /* evita quebra estranha de texto */
-    word-break: keep-all !important;
-  }
-
-  /* pequena proteção caso algum elemento pai limite largura */
-  header, header > div, .logo-container {
     width: 100% !important;
+    text-align: center !important;
   }
 }
